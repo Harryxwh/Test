@@ -50,7 +50,7 @@ int main(int argc, const char * argv[]) {
 		which makes the maintenance/debug easier.
 	*/
 	std::cout << WhoeverMaybe.GreetingPhrase2 << std::endl;
-//	std::cout << WhoeverMaybe.GreetingPhrase << std::endl; /* error */
+	std::cout << WhoeverMaybe.GreetingPhrase << std::endl; /* error */
 	
 	return 0;
 }
