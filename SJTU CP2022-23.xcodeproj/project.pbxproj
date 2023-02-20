@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92D65F1F29A13CBD001D526B /* main_v0220a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D65F1E29A13CBD001D526B /* main_v0220a.cpp */; };
+		92A97C1329A3A0210052DA47 /* CP2022-23_v0220b.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92A97C1229A3A0210052DA47 /* CP2022-23_v0220b.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,8 @@
 /* Begin PBXFileReference section */
 		920F0DCA299E1D0B00B70299 /* SJTU CP2022-23 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SJTU CP2022-23"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92936B0E299F20DC0086B024 /* CP2022-23.1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "CP2022-23.1.cpp"; path = "SJTU CP2022-23/CP2022-23.1.cpp"; sourceTree = SOURCE_ROOT; };
-		92D65F1E29A13CBD001D526B /* main_v0220a.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main_v0220a.cpp; sourceTree = "<group>"; };
+		92A97C1229A3A0210052DA47 /* CP2022-23_v0220b.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220b.cpp"; sourceTree = "<group>"; };
+		92D65F1E29A13CBD001D526B /* CP2022-23_v0220a.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220a.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +59,9 @@
 		920F0DCC299E1D0B00B70299 /* SJTU CP2022-23 */ = {
 			isa = PBXGroup;
 			children = (
-				92D65F1E29A13CBD001D526B /* main_v0220a.cpp */,
+				92D65F1E29A13CBD001D526B /* CP2022-23_v0220a.cpp */,
 				92936B0E299F20DC0086B024 /* CP2022-23.1.cpp */,
+				92A97C1229A3A0210052DA47 /* CP2022-23_v0220b.cpp */,
 			);
 			path = "SJTU CP2022-23";
 			sourceTree = "<group>";
@@ -121,7 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D65F1F29A13CBD001D526B /* main_v0220a.cpp in Sources */,
+				92A97C1329A3A0210052DA47 /* CP2022-23_v0220b.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

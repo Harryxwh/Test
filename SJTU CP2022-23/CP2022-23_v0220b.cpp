@@ -19,7 +19,7 @@ public:
 		L = L_spec;
 		N_SL = N_SL_spec;
 	};
-	static int eval_site_index(std::vector<int>& n, int sl_index) {
+	static int eval_site_index(int sl_index, std::vector<int>& n) {
 		/*
 		 s_idx = (n[d-1], n[d-2], ..., n[0], sl_index)
 		 */
@@ -48,6 +48,19 @@ public:
 	virtual ~Site() {
 		/* destructor */
 	};
+	int get_site_index() const { return site_index; };
+	void set_site_index() {
+		site_index = eval_site_index(sublattice_index, coordinates);
+	};
+	void get_position(int& sl_index, std::vector<int>& r) const {
+		sl_index = sublattice_index;
+		r = coordinates;
+	};
+	void set_position(int sl_index, const std::vector<int>& r) {
+		sublattice_index = sl_index;
+		coordinates = r;
+		set_site_index();
+	};
 };
 
 int Site::dim;
@@ -67,3 +80,4 @@ int main(int argc, const char * argv[]) {
 	Site test;
 	return 0;
 }
+
