@@ -39,7 +39,7 @@ public:
 private:
 	int site_index;
 	int sublattice_index;
-	std::vector<int> coordinates;
+	std::vector<int> coordinate;
 	
 public:
 	Site() {
@@ -50,16 +50,26 @@ public:
 	};
 	int get_site_index() const { return site_index; };
 	void set_site_index() {
-		site_index = eval_site_index(sublattice_index, coordinates);
+		site_index = eval_site_index(sublattice_index, coordinate);
 	};
 	void get_position(int& sl_index, std::vector<int>& r) const {
 		sl_index = sublattice_index;
-		r = coordinates;
+		r = coordinate;
 	};
 	void set_position(int sl_index, const std::vector<int>& r) {
 		sublattice_index = sl_index;
-		coordinates = r;
+		coordinate = r;
 		set_site_index();
+	};
+	void print_info() const {
+		std::cout
+		<< "Site #" << site_index << ": "
+		<< "sublattice " << sublattice_index << ", coordinate ("
+		<< coordinate[0];
+		for (int a = 1; a < dim; a++) {
+			std::cout << ", " << coordinate[a];
+		}
+		std::cout << ")" << std::endl;
 	};
 };
 
@@ -78,6 +88,12 @@ int main(int argc, const char * argv[]) {
 	Site::set_lattice_info(L, N_SL);
 	
 	Site test;
+	std::vector<int> r(dim);
+	r[0] = 2;
+	r[1] = 1;
+	const int sl_index = 0;
+	test.set_position(sl_index, r);
+	test.print_info();
+	
 	return 0;
 }
-

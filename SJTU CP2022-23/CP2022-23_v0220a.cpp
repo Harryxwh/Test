@@ -39,7 +39,7 @@ public:
 private:
 	int site_index;
 	int sublattice_index;
-	std::vector<int> coordinates;
+	std::vector<int> coordinate;
 	
 public:
 	Site() {
