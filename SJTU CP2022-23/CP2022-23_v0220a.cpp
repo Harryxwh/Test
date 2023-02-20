@@ -13,13 +13,13 @@ public:
 	static int dim; /* dimension */
 	static int N_SL; /* number of sublattices */
 	static std::vector<int> L; /* system size */
-	static void set_lattice_info(std::vector<int> L_spec, int N_SL_spec) {
+	static void set_lattice_info(int N_SL_spec, const std::vector<int>& L_spec) {
 		/* set dim, L, N_SL */
 		dim = static_cast<int>(L_spec.size());
 		L = L_spec;
 		N_SL = N_SL_spec;
 	};
-	static int eval_site_index(int sl_index, std::vector<int>& n) {
+	static int eval_site_index(int sl_index, const std::vector<int>& n) {
 		/*
 		 s_idx = (n[d-1], n[d-2], ..., n[0], sl_index)
 		 */
@@ -62,7 +62,7 @@ int main(int argc, const char * argv[]) {
 	std::vector<int> L(dim);
 	L[0] = 10;
 	L[1] = 10;
-	Site::set_lattice_info(L, N_SL);
+	Site::set_lattice_info(N_SL, L);
 	
 	Site test;
 	return 0;
