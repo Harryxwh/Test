@@ -11,8 +11,8 @@
 class Site {
 public:
 	static int dim; /* dimension */
-	static std::vector<int> L; /* system size */
 	static int N_SL; /* number of sublattices */
+	static std::vector<int> L; /* system size */
 	static void set_lattice_info(std::vector<int> L_spec, int N_SL_spec) {
 		/* set dim, L, N_SL */
 		dim = static_cast<int>(L_spec.size());
@@ -21,7 +21,7 @@ public:
 	};
 	static int eval_site_index(std::vector<int>& n, int sl_index) {
 		/*
-		 s_idx = (n[d-1],n[d-2],...,n[0],sl_index)
+		 s_idx = (n[d-1], n[d-2], ..., n[0], sl_index)
 		 */
 		int s_idx = n[dim - 1];
 		for ( int a = dim - 2; a >= 0; a-- ) {
@@ -37,10 +37,9 @@ public:
 	};
 	
 private:
-	/* Attributes/characteristics of a Site ojbect */
 	int site_index;
-	std::vector<int> coordinates; /* array of integers */
 	int sublattice_index;
+	std::vector<int> coordinates;
 	
 public:
 	Site() {
@@ -52,8 +51,8 @@ public:
 };
 
 int Site::dim;
-std::vector<int> Site::L;
 int Site::N_SL;
+std::vector<int> Site::L;
 
 int main(int argc, const char * argv[]) {
 
