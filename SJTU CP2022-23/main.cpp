@@ -6,51 +6,65 @@
 //
 
 #include <iostream>
+#include <vector>
 
-class Messenger {
-private:
-	std::string GreetingPhrase;
-	
+class Site {
 public:
-	Messenger() {
-		/* constructor */
-		GreetingPhrase = "Hello";
-		GreetingPhrase2 = "Hello2";
-	}
-	~Messenger() {
-		/* destructor */
-	}
-	
-	void setGreetingPhrase(std::string spec) { GreetingPhrase = spec; };
-	void speak() const {
-		std::cout << GreetingPhrase << ", World!\n";
+	static int dim; /* dimension */
+	static std::vector<int> L; /* system size */
+	static int N_SL; /* number of sublattices */
+	static void set_lattice_info(std::vector<int> L_spec, int N_SL_spec) {
+		/* set dim, L, N_SL */
+		dim = static_cast<int>(L_spec.size());
+		L = L_spec;
+		N_SL = N_SL_spec;
+	};
+	static int eval_site_index(std::vector<int>& n, int sl_index) {
+		/*
+		 s_idx = (n[d-1],n[d-2],...,n[0],sl_index)
+		 */
+		int s_idx = n[dim - 1];
+		for ( int a = dim - 2; a >= 0; a-- ) {
+			assert(n[a] < L[a] && n[a] >= 0);
+			s_idx *= L[a];
+			s_idx += n[a];
+		}
+		assert(sl_index < N_SL && sl_index >= 0);
+		s_idx *= N_SL;
+		s_idx += sl_index;
+		
+		return s_idx;
 	};
 	
-	std::string GreetingPhrase2;
+private:
+	/* Attributes/characteristics of a Site ojbect */
+	int site_index;
+	std::vector<int> coordinates; /* array of integers */
+	int sublattice_index;
+	
+public:
+	Site() {
+		/* constructor */
+	};
+	virtual ~Site() {
+		/* destructor */
+	};
 };
 
+int Site::dim;
+std::vector<int> Site::L;
+int Site::N_SL;
+
 int main(int argc, const char * argv[]) {
-	/* Usual "Hello, World" */
-	std::cout << "Hello, World!\n";
-	std::cout << "Go to ***, World!\n"; /* ??? */
 
-	/*
-		Do the same thing as above using an object Messenger,
-		so that the intention of the programmer is hopefully clearer.
-	*/
-	Messenger WhoeverMaybe;
-	WhoeverMaybe.speak();
-	WhoeverMaybe.setGreetingPhrase("Nihao");
-	WhoeverMaybe.speak();
-
-	/*
-		A private (public) member of an object cannot (can) be accessed from outside.
-		This can be used to control which information to be disclosed and which information
-		to be hidden. Usually, unnecessary access to the data is better to be restricted,
-		which makes the maintenance/debug easier.
-	*/
-	std::cout << WhoeverMaybe.GreetingPhrase2 << std::endl;
-//	std::cout << WhoeverMaybe.GreetingPhrase << std::endl; /* error */
+	/* square lattice */
+	const int N_SL = 1;
+	const int dim = 2;
+	std::vector<int> L(dim);
+	L[0] = 10;
+	L[1] = 10;
+	Site::set_lattice_info(L, N_SL);
 	
+	Site test;
 	return 0;
 }
