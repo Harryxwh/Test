@@ -1,4 +1,4 @@
-#include "catch_amalgamated.hpp"
+#include "catch2/catch_amalgamated.hpp"
 #include "Lattice.hpp"
 
 double SquareLattice_N_sites(int L0, int L1) {
