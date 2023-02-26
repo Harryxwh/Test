@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		929EF41329AB9D0000B46EE7 /* Lattice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41129AB9D0000B46EE7 /* Lattice.cpp */; };
+		929EF41529AB9EBF00B46EE7 /* Ising.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41429AB9EBF00B46EE7 /* Ising.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		92936B0E299F20DC0086B024 /* CP2022-23.1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "CP2022-23.1.cpp"; path = "SJTU CP2022-23/archive/CP2022-23.1.cpp"; sourceTree = SOURCE_ROOT; };
 		929EF41129AB9D0000B46EE7 /* Lattice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Lattice.cpp; sourceTree = "<group>"; };
 		929EF41229AB9D0000B46EE7 /* Lattice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Lattice.hpp; sourceTree = "<group>"; };
+		929EF41429AB9EBF00B46EE7 /* Ising.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ising.cpp; sourceTree = "<group>"; };
 		92A97C1229A3A0210052DA47 /* CP2022-23_v0220b.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220b.cpp"; sourceTree = "<group>"; };
 		92D65F1E29A13CBD001D526B /* CP2022-23_v0220a.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220a.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +66,7 @@
 				92A97C1629A45F030052DA47 /* archive */,
 				929EF41129AB9D0000B46EE7 /* Lattice.cpp */,
 				929EF41229AB9D0000B46EE7 /* Lattice.hpp */,
+				929EF41429AB9EBF00B46EE7 /* Ising.cpp */,
 			);
 			path = "SJTU CP2022-23";
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929EF41529AB9EBF00B46EE7 /* Ising.cpp in Sources */,
 				929EF41329AB9D0000B46EE7 /* Lattice.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
