@@ -6,10 +6,6 @@
 
 class Site {
 public:
-	static int dim; /* dimension */
-	static int N_SL; /* number of sublattices */
-	static std::vector<int> L; /* system size */
-	
 	static void set_lattice_info(int N_SL_spec, const std::vector<int>& L_spec) {
 		/* set dim, L, N_SL */
 		dim = static_cast<int>(L_spec.size());
@@ -44,6 +40,10 @@ public:
 	};
 
 private:
+	static int dim; /* dimension */
+	static int N_SL; /* number of sublattices */
+	static std::vector<int> L; /* system size */
+	
 	int site_index;
 	int sublattice_index;
 	std::vector<int> coordinate;

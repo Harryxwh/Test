@@ -29,6 +29,8 @@
 		929EF41129AB9D0000B46EE7 /* Lattice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Lattice.cpp; sourceTree = "<group>"; };
 		929EF41229AB9D0000B46EE7 /* Lattice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Lattice.hpp; sourceTree = "<group>"; };
 		929EF41429AB9EBF00B46EE7 /* Ising.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ising.cpp; sourceTree = "<group>"; };
+		929EF41729AB9F9B00B46EE7 /* catch_amalgamated.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = catch_amalgamated.cpp; sourceTree = "<group>"; };
+		929EF41829AB9F9B00B46EE7 /* catch_amalgamated.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = catch_amalgamated.hpp; sourceTree = "<group>"; };
 		92A97C1229A3A0210052DA47 /* CP2022-23_v0220b.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220b.cpp"; sourceTree = "<group>"; };
 		92D65F1E29A13CBD001D526B /* CP2022-23_v0220a.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220a.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,12 +65,22 @@
 		920F0DCC299E1D0B00B70299 /* SJTU CP2022-23 */ = {
 			isa = PBXGroup;
 			children = (
+				929EF41629AB9F7A00B46EE7 /* catch2 */,
 				92A97C1629A45F030052DA47 /* archive */,
 				929EF41129AB9D0000B46EE7 /* Lattice.cpp */,
 				929EF41229AB9D0000B46EE7 /* Lattice.hpp */,
 				929EF41429AB9EBF00B46EE7 /* Ising.cpp */,
 			);
 			path = "SJTU CP2022-23";
+			sourceTree = "<group>";
+		};
+		929EF41629AB9F7A00B46EE7 /* catch2 */ = {
+			isa = PBXGroup;
+			children = (
+				929EF41729AB9F9B00B46EE7 /* catch_amalgamated.cpp */,
+				929EF41829AB9F9B00B46EE7 /* catch_amalgamated.hpp */,
+			);
+			path = catch2;
 			sourceTree = "<group>";
 		};
 		92A97C1629A45F030052DA47 /* archive */ = {
