@@ -9,10 +9,22 @@
 /* Begin PBXBuildFile section */
 		929EF41329AB9D0000B46EE7 /* Lattice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41129AB9D0000B46EE7 /* Lattice.cpp */; };
 		929EF41529AB9EBF00B46EE7 /* IsingSimulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */; };
+		929EF41B29ABCAD200B46EE7 /* IsingSimulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */; };
+		929EF41C29ABCAD200B46EE7 /* Lattice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41129AB9D0000B46EE7 /* Lattice.cpp */; };
+		929EF42429ABCAFD00B46EE7 /* Lattice_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF42329ABCAFD00B46EE7 /* Lattice_test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		920F0DC8299E1D0B00B70299 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		929EF41E29ABCAD200B46EE7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -31,12 +43,21 @@
 		929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IsingSimulation.cpp; sourceTree = "<group>"; };
 		929EF41729AB9F9B00B46EE7 /* catch_amalgamated.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = catch_amalgamated.cpp; sourceTree = "<group>"; };
 		929EF41829AB9F9B00B46EE7 /* catch_amalgamated.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = catch_amalgamated.hpp; sourceTree = "<group>"; };
+		929EF42229ABCAD200B46EE7 /* test SJTU CP2022-23 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "test SJTU CP2022-23"; sourceTree = BUILT_PRODUCTS_DIR; };
+		929EF42329ABCAFD00B46EE7 /* Lattice_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lattice_test.cpp; sourceTree = "<group>"; };
 		92A97C1229A3A0210052DA47 /* CP2022-23_v0220b.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220b.cpp"; sourceTree = "<group>"; };
 		92D65F1E29A13CBD001D526B /* CP2022-23_v0220a.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "CP2022-23_v0220a.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		920F0DC7299E1D0B00B70299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		929EF41D29ABCAD200B46EE7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				920F0DCA299E1D0B00B70299 /* SJTU CP2022-23 */,
+				929EF42229ABCAD200B46EE7 /* test SJTU CP2022-23 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,11 +87,12 @@
 		920F0DCC299E1D0B00B70299 /* SJTU CP2022-23 */ = {
 			isa = PBXGroup;
 			children = (
-				929EF41629AB9F7A00B46EE7 /* catch2 */,
 				92A97C1629A45F030052DA47 /* archive */,
+				929EF41629AB9F7A00B46EE7 /* catch2 */,
+				929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */,
+				929EF42329ABCAFD00B46EE7 /* Lattice_test.cpp */,
 				929EF41129AB9D0000B46EE7 /* Lattice.cpp */,
 				929EF41229AB9D0000B46EE7 /* Lattice.hpp */,
-				929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */,
 			);
 			path = "SJTU CP2022-23";
 			sourceTree = "<group>";
@@ -113,6 +136,23 @@
 			productReference = 920F0DCA299E1D0B00B70299 /* SJTU CP2022-23 */;
 			productType = "com.apple.product-type.tool";
 		};
+		929EF41929ABCAD200B46EE7 /* test SJTU CP2022-23 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 929EF41F29ABCAD200B46EE7 /* Build configuration list for PBXNativeTarget "test SJTU CP2022-23" */;
+			buildPhases = (
+				929EF41A29ABCAD200B46EE7 /* Sources */,
+				929EF41D29ABCAD200B46EE7 /* Frameworks */,
+				929EF41E29ABCAD200B46EE7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "test SJTU CP2022-23";
+			productName = "SJTU CP2022-23";
+			productReference = 929EF42229ABCAD200B46EE7 /* test SJTU CP2022-23 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,6 +181,7 @@
 			projectRoot = "";
 			targets = (
 				920F0DC9299E1D0B00B70299 /* SJTU CP2022-23 */,
+				929EF41929ABCAD200B46EE7 /* test SJTU CP2022-23 */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +193,16 @@
 			files = (
 				929EF41529AB9EBF00B46EE7 /* IsingSimulation.cpp in Sources */,
 				929EF41329AB9D0000B46EE7 /* Lattice.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		929EF41A29ABCAD200B46EE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				929EF41B29ABCAD200B46EE7 /* IsingSimulation.cpp in Sources */,
+				929EF41C29ABCAD200B46EE7 /* Lattice.cpp in Sources */,
+				929EF42429ABCAFD00B46EE7 /* Lattice_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +338,26 @@
 			};
 			name = Release;
 		};
+		929EF42029ABCAD200B46EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9BKWCZ6AMQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		929EF42129ABCAD200B46EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9BKWCZ6AMQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -304,6 +375,15 @@
 			buildConfigurations = (
 				920F0DD2299E1D0B00B70299 /* Debug */,
 				920F0DD3299E1D0B00B70299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		929EF41F29ABCAD200B46EE7 /* Build configuration list for PBXNativeTarget "test SJTU CP2022-23" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				929EF42029ABCAD200B46EE7 /* Debug */,
+				929EF42129ABCAD200B46EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
