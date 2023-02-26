@@ -47,9 +47,11 @@ private:
 	int site_index;
 	int sublattice_index;
 	std::vector<int> coordinate;
-	
+	int z; /* coordination number */
+	std::vector<int> NN; /* nearest neighbor sites */
+
 public:
-	Site() {
+	Site() : z(0) {
 		/* constructor */
 	};
 	
@@ -73,16 +75,37 @@ public:
 		coordinate = r;
 		set_site_index();
 	};
+
+	int get_z() const { return z; };
+	
+	void set_z(int z_spec) {
+		z = z_spec;
+		NN.resize(z);
+	};
+	
+	int get_NN(int bond_index) const {
+		assert(bond_index < z && bond_index >= 0);
+		return NN[bond_index];
+	};
+	
+	void set_NN(int bond_index, int i_site) {
+		assert(bond_index < z && bond_index >= 0);
+		NN[bond_index] = i_site;
+	};
 	
 	void print_info() const {
 		std::cout
 		<< "Site #" << site_index << ": "
-		<< "sublattice " << sublattice_index << ", coordinate ("
+		<< "sublattice " << sublattice_index << "; coordinate ("
 		<< coordinate[0];
 		for (int a = 1; a < dim; a++) {
 			std::cout << ", " << coordinate[a];
 		}
-		std::cout << ")" << std::endl;
+		std::cout << "); NN sites (if any) ..." << std::endl;
+		for (int mu = 0; mu < z; mu++) {
+			std::cout << NN[mu] << ' ';
+		}
+		std::cout << std::endl;
 	};
 };
 
