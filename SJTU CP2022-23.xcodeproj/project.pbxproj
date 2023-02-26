@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		929B3A7829ABCCB400FDDA43 /* catch_amalgamated.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41729AB9F9B00B46EE7 /* catch_amalgamated.cpp */; };
 		929EF41329AB9D0000B46EE7 /* Lattice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41129AB9D0000B46EE7 /* Lattice.cpp */; };
 		929EF41529AB9EBF00B46EE7 /* IsingSimulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */; };
-		929EF41B29ABCAD200B46EE7 /* IsingSimulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */; };
 		929EF41C29ABCAD200B46EE7 /* Lattice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41129AB9D0000B46EE7 /* Lattice.cpp */; };
 		929EF42429ABCAFD00B46EE7 /* Lattice_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF42329ABCAFD00B46EE7 /* Lattice_test.cpp */; };
 /* End PBXBuildFile section */
@@ -200,8 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				929EF41B29ABCAD200B46EE7 /* IsingSimulation.cpp in Sources */,
 				929EF41C29ABCAD200B46EE7 /* Lattice.cpp in Sources */,
+				929B3A7829ABCCB400FDDA43 /* catch_amalgamated.cpp in Sources */,
 				929EF42429ABCAFD00B46EE7 /* Lattice_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

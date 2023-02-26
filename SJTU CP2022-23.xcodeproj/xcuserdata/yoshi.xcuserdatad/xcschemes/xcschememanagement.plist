@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SJTU CP2022-23 copy.xcscheme_^#shared#^_</key>
+		<key>SJTU CP2022-23.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>SJTU CP2022-23.xcscheme_^#shared#^_</key>
+		<key>test SJTU CP2022-23.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -17,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>920F0DC9299E1D0B00B70299</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>929EF41929ABCAD200B46EE7</key>
 		<dict>
 			<key>primary</key>
