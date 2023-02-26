@@ -101,7 +101,7 @@ public:
 		for (int a = 1; a < dim; a++) {
 			std::cout << ", " << coordinate[a];
 		}
-		std::cout << "); NN sites (if any) ..." << std::endl;
+		std::cout << "); NN sites (if any) ...";
 		for (int mu = 0; mu < z; mu++) {
 			std::cout << NN[mu] << ' ';
 		}
@@ -109,4 +109,135 @@ public:
 	};
 };
 
+class Lattice {
+	/* base class for specific lattices */
+protected:
+	const int dim;
+	const int N_SL; /* number of sublattices */
+	const std::vector<int> L; /* system size */
+	int N_sites;
+	std::vector<int> z; /* coordination number for each sublattice */
+	std::vector<Site> LatticeSite;
+	
+public:
+	Lattice( int N_SL_spec,
+			  const int z_spec[],
+			  const std::vector<int>& L_spec)
+	: dim(static_cast<int>(L_spec.size())), N_SL(N_SL_spec), L(L_spec) {
+		Site::set_lattice_info(N_SL, L);
+		N_sites = N_SL;
+		for (int a = 0; a < dim; a++) N_sites *= L[a];
+		
+		z.resize(N_SL);
+		for (int mu = 0; mu < N_SL; mu++) z[mu] = z_spec[mu];
+		
+		LatticeSite.resize(N_sites);
+		for (int i = 0; i < N_sites; i++) {
+			std::vector<int> coordinate(dim);
+			int sl_index;
+			Site::eval_position_at(i, sl_index, coordinate);
+			LatticeSite[i].set_position(sl_index, coordinate);
+			LatticeSite[i].set_z(z[sl_index]);
+		}
+	};
+	
+	virtual ~Lattice() {};
+
+	int _NN_of_Site(int site_index, int bond_index) const {
+		assert(bond_index < LatticeSite[site_index].get_z() && bond_index >= 0);
+		return LatticeSite[site_index].get_NN(bond_index);
+	};
+	
+	int _N_SL() const { return N_SL; };
+	
+	int _N_sites() const { return N_sites; };
+	
+	int _z(int site_index) const { return LatticeSite[site_index].get_z(); };
+
+	void print_info_Site(int site_index) const {
+		LatticeSite[site_index].print_info();
+	};
+
+protected:
+	void setup_NN_network() {
+		for (int i = 0; i < N_sites; i++) {
+			std::vector<int> coordinate(dim);
+			int sl_index;
+			LatticeSite[i].get_position(sl_index, coordinate);
+			for (int bond_index = 0; bond_index < z[sl_index]; bond_index++) {
+				int NN_site_index = eval_NN_site_index(sl_index, coordinate, bond_index);
+				LatticeSite[i].set_NN(bond_index, NN_site_index);
+			}
+		}
+	};
+	
+	virtual int eval_NN_site_index(int sl_index, const std::vector<int>& r, int bond_index) = 0;
+	
+	void move_forward(std::vector<int>& r, int a) {
+		assert(a < dim && a >= 0);
+		r[a] += 1;
+		r[a] = r[a] % L[a];
+	};
+	
+	void move_backward(std::vector<int>& r, int a) {
+		assert(a < dim && a >= 0);
+		r[a] += L[a] - 1;
+		r[a] = r[a] % L[a];
+	};
+};
+
+class SquareLattice : public Lattice {
+private:
+	static const int N_SL_SqLatt = 1;
+	static const int z_common = 4;
+	static const int z_common_half = z_common / 2;
+	static constexpr int z_SqLatt[N_SL_SqLatt] = { z_common };
+
+public:
+	SquareLattice(const std::vector<int>& L_spec)
+	: Lattice(N_SL_SqLatt, z_SqLatt, L_spec) {
+		setup_NN_network();
+	};
+	
+	~SquareLattice() {};
+
+	int _z_common() const { return z_common; };
+	
+	int _z_common_half() const { return z_common_half; };
+
+	int eval_NN_site_index(int sl_index, const std::vector<int>& r, int bond_index) {
+		std::vector<int> NN_r;
+		int NN_sl_index;
+		switch (bond_index) {
+			case 0: /* +x */
+				NN_r = r;
+				move_forward(NN_r, 0);
+				NN_sl_index = sl_index;
+				break;
+			case 1: /* +y */
+				NN_r = r;
+				move_forward(NN_r, 1);
+				NN_sl_index = sl_index;
+				break;
+			case 2: /* -x */
+				NN_r = r;
+				move_backward(NN_r, 0);
+				NN_sl_index = sl_index;
+				break;
+			case 3: /* -y */
+				NN_r = r;
+				move_backward(NN_r, 1);
+				NN_sl_index = sl_index;
+				break;
+			default:
+				std::cerr << "SquareLattice::eval_NN_site_index> error" << std::endl;
+				exit(0);
+		}
+		return Site::eval_site_index(NN_sl_index, NN_r);
+	}
+	
+	static int eval_N_sites(const std::vector<int>& L_spec) {
+		return N_SL_SqLatt * L_spec.at(0) * L_spec.at(1);
+	};
+};
 #endif /* Lattice_hpp */
