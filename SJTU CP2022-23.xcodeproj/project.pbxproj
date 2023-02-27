@@ -87,14 +87,22 @@
 		920F0DCC299E1D0B00B70299 /* SJTU CP2022-23 */ = {
 			isa = PBXGroup;
 			children = (
+				9273A75229AC3ADF000CEDB3 /* UnitTests */,
 				92A97C1629A45F030052DA47 /* archive */,
-				929EF41629AB9F7A00B46EE7 /* catch2 */,
 				929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */,
-				929EF42329ABCAFD00B46EE7 /* Lattice_test.cpp */,
 				929EF41129AB9D0000B46EE7 /* Lattice.cpp */,
 				929EF41229AB9D0000B46EE7 /* Lattice.hpp */,
 			);
 			path = "SJTU CP2022-23";
+			sourceTree = "<group>";
+		};
+		9273A75229AC3ADF000CEDB3 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				929EF41629AB9F7A00B46EE7 /* catch2 */,
+				929EF42329ABCAFD00B46EE7 /* Lattice_test.cpp */,
+			);
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 		929EF41629AB9F7A00B46EE7 /* catch2 */ = {
