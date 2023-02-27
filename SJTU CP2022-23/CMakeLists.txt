@@ -10,7 +10,7 @@ target_compile_options(IsingSimulation PRIVATE -Wall -Wextra)
 ### Unit test
 enable_testing()
 file( GLOB SRCS_Catch2 UnitTests/catch2/*.hpp UnitTests/catch2/*.cpp)
-add_executable(test_IsingSimulation UnitTests/Lattice_test.cpp Lattice.hpp Lattice.cpp ${SRCS_Catch2})
+add_executable(test_IsingSimulation UnitTests/IsingSystem_test.cpp IsingSystem.hpp IsingSystem.cpp UnitTests/Lattice_test.cpp Lattice.hpp Lattice.cpp ${SRCS_Catch2})
 target_compile_options(test_IsingSimulation PRIVATE -Wall -Wextra)
 add_test(test_IsingSimulation test_IsingSimulation)
 
