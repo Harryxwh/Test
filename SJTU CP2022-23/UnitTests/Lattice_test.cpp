@@ -1,5 +1,5 @@
 #include "catch2/catch_amalgamated.hpp"
-#include "Lattice.hpp"
+#include "../Lattice.hpp"
 
 int SquareLattice_N_sites(int L0, int L1) {
 	const int dim = 2;
