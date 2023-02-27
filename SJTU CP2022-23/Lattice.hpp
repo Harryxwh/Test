@@ -240,4 +240,5 @@ public:
 		return N_SL_SqLatt * L_spec.at(0) * L_spec.at(1);
 	};
 };
+
 #endif /* Lattice_hpp */

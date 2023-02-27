@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9273A75529AC60E9000CEDB3 /* IsingSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9273A75329AC60E9000CEDB3 /* IsingSystem.cpp */; };
+		9273A75729AC6173000CEDB3 /* IsingSystem_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9273A75629AC6173000CEDB3 /* IsingSystem_test.cpp */; };
 		929B3A7829ABCCB400FDDA43 /* catch_amalgamated.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41729AB9F9B00B46EE7 /* catch_amalgamated.cpp */; };
 		929EF41329AB9D0000B46EE7 /* Lattice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41129AB9D0000B46EE7 /* Lattice.cpp */; };
 		929EF41529AB9EBF00B46EE7 /* IsingSimulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */; };
@@ -37,6 +39,10 @@
 
 /* Begin PBXFileReference section */
 		920F0DCA299E1D0B00B70299 /* SJTU CP2022-23 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SJTU CP2022-23"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9273A75329AC60E9000CEDB3 /* IsingSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IsingSystem.cpp; sourceTree = "<group>"; };
+		9273A75429AC60E9000CEDB3 /* IsingSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IsingSystem.hpp; sourceTree = "<group>"; };
+		9273A75629AC6173000CEDB3 /* IsingSystem_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IsingSystem_test.cpp; sourceTree = "<group>"; };
+		9273A75829AC6257000CEDB3 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		92936B0E299F20DC0086B024 /* CP2022-23.1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "CP2022-23.1.cpp"; path = "SJTU CP2022-23/archive/CP2022-23.1.cpp"; sourceTree = SOURCE_ROOT; };
 		929EF41129AB9D0000B46EE7 /* Lattice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Lattice.cpp; sourceTree = "<group>"; };
 		929EF41229AB9D0000B46EE7 /* Lattice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Lattice.hpp; sourceTree = "<group>"; };
@@ -87,11 +93,14 @@
 		920F0DCC299E1D0B00B70299 /* SJTU CP2022-23 */ = {
 			isa = PBXGroup;
 			children = (
+				9273A75829AC6257000CEDB3 /* CMakeLists.txt */,
 				9273A75229AC3ADF000CEDB3 /* UnitTests */,
 				92A97C1629A45F030052DA47 /* archive */,
 				929EF41429AB9EBF00B46EE7 /* IsingSimulation.cpp */,
 				929EF41129AB9D0000B46EE7 /* Lattice.cpp */,
 				929EF41229AB9D0000B46EE7 /* Lattice.hpp */,
+				9273A75329AC60E9000CEDB3 /* IsingSystem.cpp */,
+				9273A75429AC60E9000CEDB3 /* IsingSystem.hpp */,
 			);
 			path = "SJTU CP2022-23";
 			sourceTree = "<group>";
@@ -101,6 +110,7 @@
 			children = (
 				929EF41629AB9F7A00B46EE7 /* catch2 */,
 				929EF42329ABCAFD00B46EE7 /* Lattice_test.cpp */,
+				9273A75629AC6173000CEDB3 /* IsingSystem_test.cpp */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				929EF41529AB9EBF00B46EE7 /* IsingSimulation.cpp in Sources */,
+				9273A75529AC60E9000CEDB3 /* IsingSystem.cpp in Sources */,
 				929EF41329AB9D0000B46EE7 /* Lattice.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +222,7 @@
 				929EF41C29ABCAD200B46EE7 /* Lattice.cpp in Sources */,
 				929B3A7829ABCCB400FDDA43 /* catch_amalgamated.cpp in Sources */,
 				929EF42429ABCAFD00B46EE7 /* Lattice_test.cpp in Sources */,
+				9273A75729AC6173000CEDB3 /* IsingSystem_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
