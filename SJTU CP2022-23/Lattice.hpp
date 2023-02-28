@@ -164,6 +164,7 @@ protected:
 			std::vector<int> coordinate(dim);
 			int sl_index;
 			LatticeSite[i].get_position(sl_index, coordinate);
+			int bond_avail[3][4] = {{0,1,3,4},{0,2,3,5},{1,2,4,5}};
 			for (int bond_index = 0; bond_index < z[sl_index]; bond_index++) {
 				int NN_site_index = eval_NN_site_index(sl_index, coordinate, bond_index);
 				LatticeSite[i].set_NN(bond_index, NN_site_index);
@@ -228,6 +229,94 @@ public:
 				NN_r = r;
 				move_backward(NN_r, 1);
 				NN_sl_index = sl_index;
+				break;
+			default:
+				std::cerr << "SquareLattice::eval_NN_site_index> error" << std::endl;
+				exit(0);
+		}
+		return Site::eval_site_index(NN_sl_index, NN_r);
+	}
+	
+	static int eval_N_sites(const std::vector<int>& L_spec) {
+		return N_SL_SqLatt * L_spec.at(0) * L_spec.at(1);
+	};
+};
+
+/*
+	Should we use double to represent coordinates in Kagome?
+	Or can we simply shrink the unit vectors?
+*/
+class KagomeLattice : public Lattice {
+private:
+	static const int N_SL_SqLatt = 3; 
+	static const int z_common = 4;
+	static const int z_common_half = z_common / 2;
+	static constexpr int z_SqLatt[N_SL_SqLatt] = { z_common };
+
+public:
+	KagomeLattice(const std::vector<int>& L_spec)
+	: Lattice(N_SL_SqLatt, z_SqLatt, L_spec) {
+		KagomeLattice::setup_NN_network();
+	};
+	
+	~KagomeLattice() {};
+
+	int _z_common() const { return z_common; };
+	
+	int _z_common_half() const { return z_common_half; };
+
+	void setup_NN_network() {
+		for (int i = 0; i < N_sites; i++) {
+			std::vector<int> coordinate(dim);
+			int sl_index;
+			LatticeSite[i].get_position(sl_index, coordinate);
+			
+			/* Only some bonds are available for a certain sublattice */
+			int bond_avail[3][4] = {{0,1,3,4},{0,2,3,5},{1,2,4,5}};
+			
+			for (int i = 0; i < z[sl_index]; i++) {
+				int bond_index = bond_avail[sl_index][i];
+				int NN_site_index = eval_NN_site_index(sl_index, coordinate, bond_index);
+				LatticeSite[i].set_NN(bond_index, NN_site_index);
+			}
+		}
+	};
+
+	int eval_NN_site_index(int sl_index, const std::vector<int>& r, int bond_index) {
+		std::vector<int> NN_r;
+		int NN_sl_index;
+		switch (bond_index) {
+			case 0: /* +a1 */
+				NN_r = r;
+				move_forward(NN_r, 0);
+				NN_sl_index = ( sl_index + 1 ) % 2;
+				break;
+			case 1: /* +a2 */
+				NN_r = r;
+				move_forward(NN_r, 1);
+				NN_sl_index = ( sl_index + 2 ) % 4;
+				break;
+			case 2: /* -a1+a2 */
+				NN_r = r;
+				move_backward(NN_r, 0);
+				move_forward(NN_r, 1);
+				NN_sl_index =  sl_index % 2 + 1 ;
+				break;
+			case 3: /* -a1 */
+				NN_r = r;
+				move_backward(NN_r, 0);
+				NN_sl_index = ( sl_index + 1 ) % 2;
+				break;
+			case 4: /* -a2 */
+				NN_r = r;
+				move_backward(NN_r, 1);
+				NN_sl_index = ( sl_index + 2 ) % 4;
+				break;
+			case 5: /* +a1-a2 */
+				NN_r = r;
+				move_forward(NN_r, 0);
+				move_backward(NN_r, 1);
+				NN_sl_index = sl_index % 2 + 1 ;
 				break;
 			default:
 				std::cerr << "SquareLattice::eval_NN_site_index> error" << std::endl;

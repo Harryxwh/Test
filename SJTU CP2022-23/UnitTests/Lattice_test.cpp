@@ -26,3 +26,12 @@ TEST_CASE("SquareLattice") {
 	REQUIRE(SquareLattice_NN(4, 4, 0, 2) == 3);
 	REQUIRE(SquareLattice_NN(4, 4, 0, 3) == 12);
 }
+
+TEST_CASE("SquareLattice2") {
+	REQUIRE(SquareLattice_N_sites(3,2) == 6);
+	REQUIRE(SquareLattice_NN(3, 2, 3, 0) == 4);
+	REQUIRE(SquareLattice_NN(3, 2, 3, 1) == 0);
+	REQUIRE(SquareLattice_NN(3, 2, 3, 2) == 5);
+	REQUIRE(SquareLattice_NN(3, 2, 3, 3) == 0);
+	
+}
