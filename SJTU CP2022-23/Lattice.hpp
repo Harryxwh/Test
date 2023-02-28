@@ -319,7 +319,7 @@ public:
 				NN_sl_index = sl_index % 2 + 1 ;
 				break;
 			default:
-				std::cerr << "SquareLattice::eval_NN_site_index> error" << std::endl;
+				std::cerr << "KagomeLattice::eval_NN_site_index> error" << std::endl;
 				exit(0);
 		}
 		return Site::eval_site_index(NN_sl_index, NN_r);
