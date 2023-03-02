@@ -283,7 +283,7 @@ public:
 					move_backward(NN_r, 0);
 					NN_sl_index =  ( sl_index + 1 ) % 2 ;
 					break;
-				case 4: /* -a2 */
+				case 3: /* -a2 */
 					NN_r = r;
 					move_backward(NN_r, 1);
 					NN_sl_index = ( sl_index + 2 ) % 4;
